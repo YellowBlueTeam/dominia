@@ -54,3 +54,49 @@
     ✅ Implement resource generation system
     ❌ stuff for map
     ```
+
+### Code formatting
+
+To keep our code clean and consistent, we use clang-format based on the Google C++ Style Guide, with a few small changes.
+Basic Rules:
+
+ - 2 spaces for indentation (no tabs)
+ - Braces on the same line (if (...) {)
+ - Maximum line length: 100 characters
+ - Pointer and reference symbols aligned with the type (int* ptr, const string& name)
+ - Short functions and if statements can be written in one line if they are simple
+
+Naming:
+
+ - Змінні та функції — camelCase:
+
+
+    int totalCount;
+    void renderScene();
+
+ - Класи та структури — PascalCase:
+
+
+    class GameEngine { ... };
+
+ - Константи — kCamelCase:
+
+   
+    const int kMaxPlayers = 4;
+
+ - Namespace — lower_case_with_underscores:
+
+    
+    namespace game_utils { ... }
+
+How to format your code:
+
+ Use clang-format before submitting a PR:
+    
+    clang-format -i your_file.cpp
+
+Or format all .cpp and .h files:
+
+    find . -regex '.*\.\(cpp\|h\)' -exec clang-format -i {} +
+
+Make sure your IDE (e.g., VSCode or CLion) uses the .clang-format file in the project root.
