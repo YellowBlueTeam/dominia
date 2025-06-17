@@ -9,6 +9,7 @@ Dominion is a economic strategy game where each player leads a city-state toward
  - C++20
  - OpenGL
  - SDL3
+ - GLM
 
 ### How to build?
 
