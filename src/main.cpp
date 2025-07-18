@@ -37,6 +37,7 @@ int main() {
     SDL_GL_SwapWindow(window);
   }
 
+  SDL_GL_DestroyContext(glcontext);
   SDL_DestroyWindow(window);
   SDL_Quit();
   return 0;
