@@ -23,6 +23,10 @@ void dominia::Game::init() {
 void dominia::Game::run() {
   this->isRunning = true;
 
+  int frameCount = 0;
+  Uint32 lastTime = SDL_GetTicks();
+  int fps = 0;
+
   while (this->isRunning) {
     Uint32 frameStart = SDL_GetTicks();
     SDL_Event event;
@@ -37,7 +41,22 @@ void dominia::Game::run() {
     this->render();
     SDL_GL_SwapWindow(window);
 
-    auto frameTime = SDL_GetTicks() - frameStart;
+    frameCount++;
+    Uint32 currentTime = SDL_GetTicks();
+
+    // Calculate & show FPS in window title
+    if (currentTime - lastTime >= 1000) {
+      fps = frameCount;
+
+      char title[50];
+      snprintf(title, 50, "dominia - FPS: %d", fps);
+      SDL_SetWindowTitle(window, title);
+
+      frameCount = 0;
+      lastTime = currentTime;
+    }
+
+    auto frameTime = currentTime - frameStart;
     // Cap FPS
     if (FRAME_DELAY > frameTime) {
       SDL_Delay(FRAME_DELAY - frameTime);

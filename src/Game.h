@@ -10,9 +10,10 @@
 #include <SDL3/SDL_log.h>
 #include <SDL3/SDL_video.h>
 #include <SDL3/SDL_timer.h>
-#include <stdlib.h>
 
+#include <stdlib.h>
 #include <cstdlib>
+#include <cstdio>
 
 // TODO: Move somewhere else
 const int TARGET_FPS = 60;
