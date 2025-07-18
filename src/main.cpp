@@ -1,5 +1,6 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
+#include <GL/gl.h>
 
 #include <iostream>
 
@@ -20,6 +21,8 @@ int main() {
     return 1;
   }
 
+  SDL_GLContext glcontext = SDL_GL_CreateContext(window);
+
   while (!done) {
     SDL_Event event;
 
@@ -28,6 +31,10 @@ int main() {
         done = true;
       }
     }
+
+    glClearColor(0,0,0,1);
+    glClear(GL_COLOR_BUFFER_BIT);
+    SDL_GL_SwapWindow(window);
   }
 
   SDL_DestroyWindow(window);
