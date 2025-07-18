@@ -4,9 +4,11 @@
 
 #include "Game.h"
 
+#include <SDL3/SDL_oldnames.h>
 
 void dominia::Game::init() {
   SDL_Init(SDL_INIT_VIDEO);
+  SDL_SetLogPriorities(SDL_LOG_PRIORITY_INFO);
 
   this->window = SDL_CreateWindow("dominia", 640, 480, SDL_WINDOW_OPENGL);
 
@@ -22,6 +24,7 @@ void dominia::Game::run() {
   this->isRunning = true;
 
   while (this->isRunning) {
+    Uint32 frameStart = SDL_GetTicks();
     SDL_Event event;
 
     while (SDL_PollEvent(&event)) {
@@ -33,6 +36,12 @@ void dominia::Game::run() {
     this->update();
     this->render();
     SDL_GL_SwapWindow(window);
+
+    auto frameTime = SDL_GetTicks() - frameStart;
+    // Cap FPS
+    if (FRAME_DELAY > frameTime) {
+      SDL_Delay(FRAME_DELAY - frameTime);
+    }
   }
 }
 
