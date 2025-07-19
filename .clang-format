@@ -1,8 +1,8 @@
 BasedOnStyle: Google
 
 # Indentation and spacing
-IndentWidth: 2
-TabWidth: 2
+IndentWidth: 4
+TabWidth: 4
 UseTab: Never
 BreakBeforeBraces: Attach
 AllowShortFunctionsOnASingleLine: Inline
@@ -20,7 +20,7 @@ SpaceAfterCStyleCast: true
 
 # Includes
 IncludeBlocks: Regroup
-SortIncludes: true
+SortIncludes: CaseSensitive
 IncludeCategories:
   - Regex:           '^<.*\.h>'
     Priority:        1
