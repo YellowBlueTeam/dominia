@@ -2,7 +2,7 @@
 // Created by kotleni on 7/19/25.
 //
 
-#include "Game.h"
+#include "../include/Game.h"
 
 #include <SDL3/SDL_oldnames.h>
 
