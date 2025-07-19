@@ -21,6 +21,8 @@
  refactor: internal change
  ```
 
+See [here](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) for more details
+
 ### How to submit PR?
 
  1. Make new branch from `main` 
