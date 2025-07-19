@@ -9,6 +9,8 @@
 
 // TODO: Move somewhere else
 const bool USE_VSYNC = true;
+const bool WINDOW_W = 1280;
+const bool WINDOW_H = 720;
 const int TARGET_FPS = 60;
 const int FRAME_DELAY = 1000 / TARGET_FPS;
 

@@ -19,7 +19,7 @@ void Game::init() {
   SDL_Init(SDL_INIT_VIDEO);
   SDL_SetLogPriorities(SDL_LOG_PRIORITY_INFO);
 
-  this->window = SDL_CreateWindow("dominia", 640, 480, SDL_WINDOW_OPENGL);
+  this->window = SDL_CreateWindow("dominia", WINDOW_W, WINDOW_H, SDL_WINDOW_OPENGL);
 
   if (window == NULL) {
     SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create window: %s\n", SDL_GetError());
