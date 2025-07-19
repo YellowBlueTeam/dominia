@@ -27,6 +27,9 @@ void Game::init() {
   }
 
   this->glcontext = SDL_GL_CreateContext(window);
+
+  // Toggle VSync
+  SDL_GL_SetSwapInterval(USE_VSYNC);
 }
 
 void Game::run() {
@@ -66,8 +69,8 @@ void Game::run() {
     }
 
     auto frameTime = currentTime - frameStart;
-    // Cap FPS
-    if (FRAME_DELAY > frameTime) {
+    // Cap FPS if vsync disabled
+    if (!USE_VSYNC && FRAME_DELAY > frameTime) {
       SDL_Delay(FRAME_DELAY - frameTime);
     }
   }
