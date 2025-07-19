@@ -4,4 +4,10 @@ project(dominia)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(dominia src/main.cpp)
+find_package(SDL3 REQUIRED CONFIG REQUIRED COMPONENTS SDL3)
+find_package(OpenGL REQUIRED)
+
+include_directories(include/)
+
+add_executable(dominia src/main.cpp src/Game.cpp)
+target_link_libraries(dominia PRIVATE SDL3::SDL3 OpenGL)

@@ -1,6 +1,10 @@
-#include <iostream>
+#include <Game.h>
 
-int main(){
-  std::cout << "Hello, World" << std::endl;
+int main() {
+  auto game = dominia::Game();
+  game.init();
+  game.run();
+  game.shutdown();
+
   return 0;
 }
