@@ -4,9 +4,18 @@
 
 #include "../include/Game.h"
 
-#include <SDL3/SDL_oldnames.h>
+#include <GL/gl.h>
+#include <SDL3/SDL_init.h>
+#include <SDL3/SDL_log.h>
+#include <SDL3/SDL_timer.h>
+#include <SDL3/SDL_video.h>
+#include <stdlib.h>
 
-void dominia::Game::init() {
+#include <cstdio>
+#include <cstdlib>
+
+namespace dominia {
+void Game::init() {
   SDL_Init(SDL_INIT_VIDEO);
   SDL_SetLogPriorities(SDL_LOG_PRIORITY_INFO);
 
@@ -20,7 +29,7 @@ void dominia::Game::init() {
   this->glcontext = SDL_GL_CreateContext(window);
 }
 
-void dominia::Game::run() {
+void Game::run() {
   this->isRunning = true;
 
   int frameCount = 0;
@@ -64,17 +73,16 @@ void dominia::Game::run() {
   }
 }
 
-void dominia::Game::update() {
+void Game::update() {}
 
-}
-
-void dominia::Game::render() {
-  glClearColor(0,0,0,1);
+void Game::render() {
+  glClearColor(0, 0, 0, 1);
   glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void dominia::Game::shutdown() {
+void Game::shutdown() {
   SDL_GL_DestroyContext(glcontext);
   SDL_DestroyWindow(window);
   SDL_Quit();
 }
+}  // namespace dominia
