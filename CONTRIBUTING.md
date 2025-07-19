@@ -62,7 +62,7 @@ See [here](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) 
 To keep our code clean and consistent, we use clang-format based on the Google C++ Style Guide, with a few small changes.
 Basic Rules:
 
- - 2 spaces for indentation (no tabs)
+ - 4 spaces for indentation (no tabs)
  - Braces on the same line (if (...) {)
  - Maximum line length: 100 characters
  - Pointer and reference symbols aligned with the type (int* ptr, const string& name)
