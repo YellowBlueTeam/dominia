@@ -70,24 +70,20 @@ Basic Rules:
 
 Naming:
 
- - Змінні та функції — camelCase:
-
+ - Variables and functions — camelCase:
 
     int totalCount;
     void renderScene();
 
- - Класи та структури — PascalCase:
-
+ - Classes and structures — PascalCase:
 
     class GameEngine { ... };
 
- - Константи — kCamelCase:
-
+ - Constants — kCamelCase:
    
     const int kMaxPlayers = 4;
 
  - Namespace — lower_case_with_underscores:
-
     
     namespace game_utils { ... }
 
